@@ -1,0 +1,44 @@
+Id,Nombre,Direccion,Telefono,Celular,Email,Creditos,Activo,FecActivacion
+1,MG-02,Calle Buena Vista,,777-12345,gim1@gimnasio.nee,22,No,7/25/2019 12:00:00 AM
+2,GIM2,Av. Busch 647 casi 2o Anillo,,777-12345,gim2@gimnasio.nee,15,No,7/25/2019 12:00:00 AM
+3,GIM3,Av. Irala 452,,777-12345,GIM3@gimnasio.nee,25,No,7/25/2019 12:00:00 AM
+5,GIM4,Calle Madrinas del Chaco # 2390 casi 4 Anillo,,777-12345,GIM4@gimnasio.nee,12,No,7/25/2019 12:00:00 AM
+6,GIM5,Pasillo oGuapilo s/n,,777-12345,GIM5@gimnasio.nee,22,No,7/25/2019 12:00:00 AM
+7,GIM6,2o Anillo esq. Av. Centenario,,777-12345,GIM6@gimnasio.nee,22,No,7/25/2019 12:00:00 AM
+8,GIM8,Tercer A. y Avenida La Barranca,,777-12345,GIM8@gimnasio.nee,22,No,7/25/2019 12:00:00 AM
+9,GIM9,Cuarto A. y Avenida Bibosi,,777-12345,GIM9@gimnasio.nee,22,No,7/25/2019 12:00:00 AM
+10,GIM10,Calle Suarez de Figueroa esq. Velasco,,777-12345,GIM10@gimnasio.nee,22,No,7/25/2019 12:00:00 AM
+11,StarFit,Calle Junin 549,,798-73658,starfit@multigym.fit,20,Si,10/9/2019 12:00:00 AM
+14,FitZone,Av. San Martin - Shopping Fidalga Equipetrol 3er Piso,344-8282,78530408,contacto@fitzone.com.bo,25,Si,10/8/2019 12:00:00 AM
+16,Planet Gym,"Av. Mutualista 3er. Anillo, "Centro Comerial Mutualista 1er Piso",322-8882,786-48006,admin@planetgym.com,20,No,10/8/2019 12:00:00 AM
+21,McGym,Calle Independencia # 249,311-6997,766-89206,info@mcgym-gimnasio.com,30,Si,10/10/2019 12:00:00 AM
+22,Jacare,3er Anillo interno entre Av. Busch y Av. Centenario,,781-73034,jacare@multigym.fit,20,Si,10/19/2019 12:00:00 AM
+23,Valhala Fitness Center,Av. Beni Barrio Hamacas calle 8 #3230,756-59532,691-70066,fitnesscentervalhala@gmail.com,20,Si,11/18/2019 12:00:00 AM
+25,Strong Fit,"Radial 27, Entre 4to y 5to anillo, frente a la calle 6 ",,700-71016,strong.fit@multigym.fit,15,Si,11/18/2019 12:00:00 AM
+28,Corpus Gym,Calle Warnes # 667,336-0865, 3360865,info@corpusgym.net,30,Si,11/30/2019 12:00:00 AM
+29,Studio Pole Dance & Fitness,Av.Roca y Coronado # 289 entre 2o y 3er Anillo,,766-57770,studiopoleandfitness.sc@gmail.com,35,Si,11/30/2019 12:00:00 AM
+31,Pongamonos en Forma,2do Anillo c/Victorino Rivero junto Universidad NUR,,709-84999,edwinbautista.gh@gmail.com,26,Si,11/30/2019 12:00:00 AM
+32,American Gym,"Barrio hamacas C/Tadeo Haenke edificio #60, 3er An. Ext. entre Beni y Banzer",342-0209,763-43323,american@multigym.fit,20,Si,12/2/2019 12:00:00 AM
+36,Bar 7 Street Workout,Radial 13 entre 5to y 6to anillo,,70204271, fabrizziofc@hotmail.com,15,Si,11/12/2019 12:00:00 AM
+41,Golden Spartan By Infinit,"6to anillo Av. Miguel servet y Cruz del sur #6005 frente a la UEB, (zona Sur) #6005",,766-69388,Golden.Infinit@hotmail.com,15,Si,12/12/2019 12:00:00 AM
+42,Revolution Bolivia,Av. El Trompillo casi esquina la Barranca,709-16086 , 770-63324,marketing@revolutionbolivia.com,20,Si,12/12/2019 12:00:00 AM
+43,Angello Montoya Fitness Club,Av. Tomas De Lezo Esquina Choreti #288 ,,709-26674,angelocuba1990@gmail.com,15,Si,12/12/2019 12:00:00 AM
+47,Reyes Fitness Club,Calle Julio Salmón esquina Av. 26 de febrero Nº 521, 357-9373,357-9383,club_reyes@hotmail.com,30,Si,12/12/2019 12:00:00 AM
+48,Jady Sport Gym Center,Avenida Busch # 968 Entre 2do y 3er anillo,335-51459,736-46000,jady@multigym.fit,20,Si,12/13/2019 12:00:00 AM
+49,CF SPORT,"Av. Ovidio Barbery (radial 26), a una cuadra y media del Tercer Anillo #450",,71032803,cf@multigym.fit,20,Si,12/13/2019 12:00:00 AM
+54,Zone Sport Gym,Av. Sudamericana entre 4to y 5to anillo calle 1,,691-29291,zonesport@multigym.fit,12,Si,12/16/2019 12:00:00 AM
+55,NovaFit Fitness Center,Av. paurito entre 6to y 7mo anillo ,,73137067,NovaFit@multigym.fit,15,Si,12/16/2019 12:00:00 AM
+56,Xtreme Fitness & Wellness,Av. Paragua y 4to anillo Mall el Parque 1er piso,,NO TIENE,xtremefw@hotmail.com,20,Si,12/17/2019 12:00:00 AM
+57,WiemsPro Bolivia,3er anillo externo entre av. Busch y Centenario #3435,, 781-12394,ej_saucedo@hotmail.com,140,Si,12/19/2019 12:00:00 AM
+58,Activate Fitness Gym,Entre 5to y 6to anillo calle 2 zona la colorada,,716-74694,alexosinaga2970@gmail.com,15,Si,12/19/2019 12:00:00 AM
+68,Spazio Fitness Bolivia,Alameda Junin nro. 157,710-06462,677-10618,aquiclau_643@hotmail.com,20,Si,1/28/2019 12:00:00 AM
+76,Box Energy,"Calle Francisco de Aguilera # 3215, entre 3er y 4to anillo, Zona Mutualista",621-22617,753-81350,andres27pipe@gmail.com,15,Si,1/31/2020 12:00:00 AM
+88,KMG Bolivia,"Radial 27, 4 cuadras del 3er Anillo ext. hacia el 4o, edificio plomo 2do piso",332-7882 ,750-99983,bolivia.kmg@gmail.com,23,Si,2/3/2020 12:00:00 AM
+90,GoFit and Wellness,"Tercer anillo Interno, esquina Manuel Jesus Parada",,700-11202,ivonnegofit@gmail.com,30,No,2/12/2020 12:00:00 AM
+93,Canido Team,"Calle Mataral, frente a poligimnasio Santa Rosita",776-05220,700-98834,canidoteam@multigym.fit,20,Si,2/12/2020 12:00:00 AM
+94,Samix,"Av. Los Cusis No. 2165, entre Av. Beni y Av. Alemana",343-5377,343-5377,samix@multigym.fit,35,Si,2/12/2020 12:00:00 AM
+95,X Body Norte,"Av. Los Cusis, entre Av. Alemana y Beni, entre 2do y 3er anillo",785-18048,780-00090,xbodynorte@multigym.fit,120,Si,2/12/2020 12:00:00 AM
+96,Z-fitness, Av. Virgen de Cotoca #3590 sobre el 3er anillo externo,708-32356,708-32356,zfitnessbolivia@hotmail.com,15,Si,2/19/2020 12:00:00 AM
+112,Club deportivo Medley,Urubó Open Mall,388-8354,721-83163,medleyclub@gmail.com,30,Si,2/19/2020 12:00:00 AM
+113,Box Legacy,Av. Alemana entre 3er y 4to anillo C/combate Bague,780-91793,780-91793, boxlegacy@outlook.es,30,Si,3/3/2020 12:00:00 AM
+114,Crispolesport,"Av. Radial 26, Marcelo Terceros, diagonal zoo. Frente al colegio San Agustin",778-35580,778-35580,crispolesport@gmail.com,30,Si,3/6/2020 12:00:00 AM
