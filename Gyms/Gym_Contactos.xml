@@ -1,0 +1,15 @@
+﻿<Contactos_Gym>
+  <Gym Id="28" NameGym="Corpus Gym">
+    <Contact Id="1" NameContact="Freddy Boland - 709-51325 - freddyBoland@corpus.com - Propietario" />
+    <Contact Id="3" NameContact="Nataniel Aguirre - 765-09876 -  - Gerente" />
+    <Contact Id="4" NameContact="Ovidio Barbery - 967-89087 -  - front desk" />
+    <Contact Id="5" NameContact="Roca y Coronado - 123-12312 -  - front desk" />
+  </Gym>
+  <Gym Id="11" NameGym="StarFit">
+    <Contact Id="6" NameContact="Lupita cortez - 777-88990 - estemiemail@mail.com - Propietario" />
+    <Contact Id="7" NameContact="Sandro Calamaro - 47498474 -  - Front Desk" />
+  </Gym>
+  <Gym Id="25" NameGym="Strong Fit">
+    <Contact Id="8" NameContact="Adaly Arauz T. - 709-51325 -  - socio" />
+  </Gym>
+</Contactos_Gym>

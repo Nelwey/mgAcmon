@@ -3,7 +3,7 @@
 
     <div class="row mt-3">
 
-        <div class="col-12">
+        <div class="col-12 text-center">
             <h2>Lista de Personas</h2>
         </div>
         <div class="col-12 py-3 py-0">

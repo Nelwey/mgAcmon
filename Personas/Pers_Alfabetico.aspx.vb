@@ -38,7 +38,9 @@ Partial Public Class Pers_Alfabetico
                    "WHEN a.Activo = 0 THEN 'No' ENd as Activo " &
                    "from mg_persona a " &
                    "INNER JOIN MG_Planes b ON b.id = a.Id_Plan " &
-                   "WHERE a.apellido Like '" & txtFiltroApellido.Text & "'" &
+                   "WHERE a.apellido Like '%" &  
+                   txtFiltroApellido.Text & 
+                   "%'" & 
                    "ORDER BY  a.Apellido, a.Nombre"
 
         SQL_PersAlfa.Select(DataSourceSelectArguments.Empty)
