@@ -6,7 +6,7 @@
         <div class="col-12 text-center">
             <h2>Lista de Gimnasios</h2>
         </div>
-        <div class="col-12 pt-3 pt-0">
+        <div class="col-12 mb-2">
             <asp:Button ID="btn_Export" runat="server" Text="Exportar Datos" OnClick="btn_Export_Click"
                 class="btn btn-sm btn-dark" />
         </div>

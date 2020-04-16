@@ -64,10 +64,11 @@
                                 Gimnasios
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/Gyms/Gyms_Alfabetico.aspx">Lista Alfabética</a>
-                                <a class="dropdown-item" href="#">Admin</a>
-                                <a class="dropdown-item" href="/Gyms/Gyms_CtaBanco.aspx">Cuentas Bancarias</a>
-                                <a class="dropdown-item" href="#">Contactos</a>
+                                <a class="dropdown-item" href="../Gyms/Gyms_Master.aspx">Maestro de Gimnasios</a>
+                                <a class="dropdown-item" href="../Gyms/Gyms_Alfabetico.aspx">Lista Alfabetica</a>
+                                <a class="dropdown-item" href="../Gyms/Gyms_CtaBanco.aspx">Cuentas Bancarias</a>
+                                <a class="dropdown-item" href="../Gyms/Gyms_Contactos.aspx">Contactos</a>
+                                <a class="dropdown-item" href="../Gyms/Gyms_Reviews.aspx">Reviews</a>
                             </div>
                         </li>
 
@@ -77,9 +78,10 @@
                                 Personas
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/Personas/Pers_Alfabetico.aspx">Lista Alfabética</a>
-                                <a class="dropdown-item" href="#">Lista Créditos Comprados</a>
-                                <a class="dropdown-item" href="#">Inactivos</a>
+                                <a class="dropdown-item" href="../Personas/Pers_Alfabetico.aspx">Lista Alfabética</a>
+                                <a class="dropdown-item" href="../Personas/Pers_CompraCR.aspx">Lista Créditos
+                                    Comprados</a>
+                                <a class="dropdown-item" href="../Personas/Pers_Antiguos.aspx">Antiguedad</a>
                                 <a class="dropdown-item" href="#">Fecha de Nacimiento</a>
                             </div>
                         </li>
@@ -93,6 +95,18 @@
                                 <a class="dropdown-item" href="#">Lista Alfabética</a>
                                 <a class="dropdown-item" href="#">Lista Contactos</a>
                                 <a class="dropdown-item" href="#">Créditos Gastados</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Visitas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="../Visitas/Visits_Gyms.aspx">A Gimnasios</a>
+                                <a class="dropdown-item" href="#">De Personas</a>
+                                <a class="dropdown-item" href="#">Ranking de Visitas</a>
                             </div>
                         </li>
 
