@@ -5,7 +5,7 @@
         <div class="col-12 text-center">
             <h2>Reviews por Gimnasios</h2>
         </div>
-        <div class="col-12 mb-2">
+        <div class="col-12 col-lg-7 mx-auto mb-2">
             <asp:Button ID="btn_Export" runat="server" Text="Exportar Datos" OnClick="btn_Export_Click" class="btn btn-dark btn-sm"/>
         </div>
         <div class="col-12 col-lg-7 mx-auto">
@@ -14,6 +14,8 @@
                 AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SQL_Reviews" PageSize="15" class="table table-responsive-sm table-sm">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
+                    <asp:CommandField SelectText="" ShowSelectButton="True" HeaderText="Detalle" ButtonType="Image" SelectImageUrl="~/Images/Right-arrow.png" />
+                    
                     <asp:BoundField DataField="Nombre" HeaderText="Gimnasio" SortExpression="Nombre">
                         <ItemStyle Wrap="False" />
                     </asp:BoundField>
@@ -24,8 +26,6 @@
                     <asp:BoundField DataField="Estrellas" HeaderText="Estrellas" SortExpression="Estrellas">
                         <ItemStyle HorizontalAlign="Right" />
                     </asp:BoundField>
-                    <asp:CommandField SelectText="" ShowSelectButton="True" HeaderText="Detalle" ButtonType="Image"
-                        SelectImageUrl="~/Images/Right-arrow.png" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

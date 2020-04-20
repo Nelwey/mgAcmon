@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Site.master.vb" Inherits="mgAdmin.SiteMaster" %>
+﻿<%@ Master Language="VB" AutoEventWireup="true" CodeFile="Site.master.vb" Inherits="SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -92,8 +92,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="../Visitas/Visits_Gyms.aspx">A Gimnasios</a>
-                            <a class="dropdown-item" href="#">De Personas</a>
-                            <a class="dropdown-item" href="#">Ranking de Visitas</a>
+                            <a class="dropdown-item" href="../Visitas/Visits_Pers.aspx">De Personas</a>
+                            <a class="dropdown-item" href="../Visitas/Visits_Top10.aspx">Top 10 Gyms</a>
                         </div>
                     </li>
 
@@ -102,16 +102,16 @@
                             Ingresos
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Registro de Ingreso</a>
+                            <a class="dropdown-item" href="#">Registro Pago de Cliente</a>
                             <a class="dropdown-item" href="#">Lista de Ingreso por fechas</a>
-                            <a class="dropdown-item" href="#">Ingresos por Método (depósito/QR/Tarjeta)</a>
+                            <a class="dropdown-item" href="#">Pagos por Medio (dep/QR/Tarj)</a>
                         </div>
                     </li>
 
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pagos
+                            Egresos
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Consolidado entre fechas</a>

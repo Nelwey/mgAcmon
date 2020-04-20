@@ -4,7 +4,7 @@ Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Web.Script.Serialization
 
-Public Class Gym_Utils
+Partial Public Class Gym_Utils
 
     Public Function Gym_Insert(
         tmpId_Ciudad As Int16,
@@ -32,54 +32,54 @@ Public Class Gym_Utils
         tmpPassw As String) As Int16
 
         Dim RetCode As Int16
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
-        Dim queryString As String = "INSERT INTO MG_Gym (" + _
-            "Ciudad, " + _
-            "Nombre, " + _
-            "Direccion, " + _
-            "Referencias, " + _
-            "Telefono, " + _
-            "Celular, " + _
-            "Web, " + _
-            "Facebook, " + _
-            "Email, " + _
-            "Lat, " + _
-            "Lon, " + _
-            "Creditos, " + _
-            "ImgLogo, " + _
-            "Img1, " + _
-            "Img2, " + _
-            "Img3, " + _
-            "HorarioLV, " + _
-            "HorarioS, " + _
-            "HorarioDF, " + _
-            "FecActivacion, " + _
-            "Activo, " + _
-            "Instagram, " + _
-            "Passw) " + _
-        "VALUES (" + _
-            tmpId_Ciudad + ", '" + _
-            tmpNombre + "', '" + _
-            tmpDireccion + "', '" + _
-            tmpReferencias + "', '" + _
-            tmpTelefono + "', '" + _
-            tmpCelular + "', '" + _
-            tmpWeb + "', '" + _
-            tmpFacebook + "', '" + _
-            tmpEmail + "', " + _
-            Val(tmpLat) + ", " + _
-            Val(tmpLon) + ", " + _
-            Val(tmpCreditos) + ", '" + _
-            tmpImgLogo + "', '" + _
-            tmpImg1 + "', '" + _
-            tmpImg2 + "', '" + _
-            tmpImg3 + "', '" + _
-            tmpHorarioLV + "', '" + _
-            tmpHorarioS + "', '" + _
-            tmpHorarioDF + "', " + _
-            "cast(getdate() as smalldatetime)" + ", " + _
-            tmpActivo + ", '" + _
-            tmpInstagram + "', '" + _
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
+        Dim queryString As String = "INSERT INTO MG_Gym (" +
+            "Ciudad, " +
+            "Nombre, " +
+            "Direccion, " +
+            "Referencias, " +
+            "Telefono, " +
+            "Celular, " +
+            "Web, " +
+            "Facebook, " +
+            "Email, " +
+            "Lat, " +
+            "Lon, " +
+            "Creditos, " +
+            "ImgLogo, " +
+            "Img1, " +
+            "Img2, " +
+            "Img3, " +
+            "HorarioLV, " +
+            "HorarioS, " +
+            "HorarioDF, " +
+            "FecActivacion, " +
+            "Activo, " +
+            "Instagram, " +
+            "Passw) " +
+        "VALUES (" +
+            tmpId_Ciudad + ", '" +
+            tmpNombre + "', '" +
+            tmpDireccion + "', '" +
+            tmpReferencias + "', '" +
+            tmpTelefono + "', '" +
+            tmpCelular + "', '" +
+            tmpWeb + "', '" +
+            tmpFacebook + "', '" +
+            tmpEmail + "', " +
+            Val(tmpLat) + ", " +
+            Val(tmpLon) + ", " +
+            Val(tmpCreditos) + ", '" +
+            tmpImgLogo + "', '" +
+            tmpImg1 + "', '" +
+            tmpImg2 + "', '" +
+            tmpImg3 + "', '" +
+            tmpHorarioLV + "', '" +
+            tmpHorarioS + "', '" +
+            tmpHorarioDF + "', " +
+            "cast(getdate() as smalldatetime)" + ", " +
+            tmpActivo + ", '" +
+            tmpInstagram + "', '" +
             tmpPassw + "'))"
 
         Try
@@ -108,7 +108,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function ReadVisitas(tmpGymID As String, tmpFecha1 As String, tmpFecha2 As String) As DataTable
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         queryString = "SELECT a.Id, a.Id_Gym, b.Apellido, b.Nombre, " &
                     "convert(nvarchar(30),a.FecVisita,103) AS Fecha, convert(nvarchar(5),a.FecVisita,108) AS Hora, " &
@@ -148,7 +148,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function ReadVisitasResumen(tmpGymID As String) As DataTable
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         queryString = "SELECT count(*) VisTotal, sum(CredUsado) CredTotal FROM MG_visitas " &
                     "WHERE id_Gym = " & tmpGymID & " GROUP BY id_gym"
@@ -176,7 +176,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function CheckLogin(tmpLogin As String, tmpPassword As String) As DataTable
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         queryString = "Select Id, Login, Passw, Nombre, Apellido, CredDisponible, Token, Activo " &
                     "From MG_Persona where Login = '" & tmpLogin & "' " &
@@ -205,7 +205,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function CheckLoginExiste(tmpLogin As String) As Boolean
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         Dim LoginDB As Int16
         queryString = "SELECT count(*) from MG_Persona WHERE Login = " & tmpLogin
@@ -230,7 +230,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function ReadUsuarioLogin(tmpLogin As String) As DataTable
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         queryString = "Select * From MG_Persona where Login = '" & tmpLogin & "' "
 
@@ -258,7 +258,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function InsertReview(tmpId_Pers As Int16, tmpId_Gym As Int16, tmpNota As Int16, tmpObser As String) As Int16
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         Dim queryString2 As String
 
@@ -293,7 +293,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function ReadReviewResumen(tmpId_Gym As Int16) As DataTable
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
 
         queryString = "SELECT COUNT(*) Cantidad, round(avg(calificacion+0.0),2) Nota " &
@@ -335,7 +335,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function ReadReviewDetalle(tmpId_Gym As Int16) As DataTable
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
 
         queryString = "select Calificacion, Count(Calificacion) as Cantidad " &
@@ -376,12 +376,74 @@ Public Class Gym_Utils
 
     End Function
 
-    Public Function ReadReviewsByGym(tmpGymID As Int16) As DataTable
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+    Public Function ReadTotalVisitasByPeriodo(tmpFechaIni As String, tmpFechaFin As String) As DataTable
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
-        queryString = "SELECT top 25 b.nombre Persona, a.fecReview Fecha, a.Calificacion Nota, a.Review Comentario " + _
-                "FROM mg_reviews a " + _
-                "INNER JOIN MG_Persona b on b.id = a.Id_Persona " + _
+
+        queryString = "select count(*) from MG_Visitas " +
+        "WHERE FecVisita Between '" + tmpFechaIni + "' AND '" + tmpFechaFin + "'"
+
+        Dim DTReturn As New DataTable
+
+        Try
+            Using connection As New SqlConnection(connString.ToString)
+                Dim command As New SqlCommand(queryString, connection)
+                connection.Open()
+                Dim reader As SqlDataReader = command.ExecuteReader()
+                Try
+                    DTReturn.Load(reader)
+                Finally
+                    reader.Close()
+                End Try
+            End Using
+
+        Catch ex As SqlException
+            Console.WriteLine(ex.ErrorCode, ex.Message)
+        End Try
+
+        Return DTReturn
+
+    End Function
+
+    Public Function ReadTop10ByPeriodo(tmpFechaIni As String, tmpFechaFin As String, tmpTotal As String) As DataTable
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
+        Dim queryString As String
+
+        queryString = "SELECT TOP 15 b.Nombre as Gimnasio, count(*) as Visitas, sum(a.credusado) as Cred_Ganado, " +
+                "(cast(count(*) as decimal) / cast(" + tmpTotal + " as int)) * 100 " +
+                "From MG_Visitas a " +
+                "INNER Join dbo.MG_Gym as b ON a.Id_Gym = b.ID " +
+                "WHERE FecVisita Between '" + tmpFechaIni + "' AND '" + tmpFechaFin + "'" +
+                "Group BY b.Nombre ORDER BY Visitas desc "
+
+        Dim DTReturn As New DataTable
+
+        Try
+            Using connection As New SqlConnection(connString.ToString)
+                Dim command As New SqlCommand(queryString, connection)
+                connection.Open()
+                Dim reader As SqlDataReader = command.ExecuteReader()
+                Try
+                    DTReturn.Load(reader)
+                Finally
+                    reader.Close()
+                End Try
+            End Using
+
+        Catch ex As SqlException
+            Console.WriteLine(ex.ErrorCode, ex.Message)
+        End Try
+
+        Return DTReturn
+
+    End Function
+
+    Public Function ReadReviewsByGym(tmpGymID As Int16) As DataTable
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
+        Dim queryString As String
+        queryString = "SELECT top 25 b.nombre Persona, a.fecReview Fecha, a.Calificacion Nota, a.Review Comentario " +
+                "FROM mg_reviews a " +
+                "INNER JOIN MG_Persona b on b.id = a.Id_Persona " +
                 "WHERE a.Id_Gym = " + tmpGymID.ToString + " ORDER BY a.fecReview DESC"
 
         Dim DTReturn As New DataTable
@@ -407,7 +469,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function InsertContacto(Id_Gym As Int16, tmpNombre As String, tmpCelular As String, tmpEmail As String, tmpCargo As String) As Int16
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
 
         queryString = "INSERT INTO MG_Gym_Contacto " &
@@ -433,7 +495,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function CheckIn(Id_Usuario As Int16, Id_Gym As Int16, CredUsado As Int16) As Int16
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         Dim queryString2 As String
 
@@ -466,7 +528,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function Delete_Gym_Disc(tmpGymID As Int16) As Int16
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         queryString = "DELETE FROM MG_Gym_Disc WHERE Id_Gym = " & tmpGymID
         Dim RetValue As Int16
@@ -488,9 +550,9 @@ Public Class Gym_Utils
     End Function
 
     Public Function Insert_Gym_Disc(tmpGymID As Int16, tmpDiscID As Int16) As Int16
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
-        queryString = "Insert into MG_Gym_Disc (Id_Gym, Id_Disciplina) " & _
+        queryString = "Insert into MG_Gym_Disc (Id_Gym, Id_Disciplina) " &
                 " Values (" & tmpGymID & ", " & tmpDiscID & ")"
         Dim RetValue As Int16
 
@@ -511,7 +573,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function Delete_Gym_Serv(tmpGymID As Int16) As Int16
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         queryString = "DELETE FROM MG_Gym_Serv WHERE Id_Gym = " & tmpGymID
         Dim RetValue As Int16
@@ -533,9 +595,9 @@ Public Class Gym_Utils
     End Function
 
     Public Function Insert_Gym_Serv(tmpGymID As Int16, tmpServID As Int16) As Int16
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
-        queryString = "Insert into MG_Gym_Serv (Id_Gym, Id_Servicio) " & _
+        queryString = "Insert into MG_Gym_Serv (Id_Gym, Id_Servicio) " &
                 " Values (" & tmpGymID & ", " & tmpServID & ")"
         Dim RetValue As Int16
 
@@ -557,7 +619,7 @@ Public Class Gym_Utils
 
     Public Function Update_Gym_Images(tmpGymID As Int16, tmpField As String, tmpImg As String) As Int16
 
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         queryString = "UPDATE MG_Gym Set " & tmpField & " = '" & tmpImg & "' WHERE Id = " & tmpGymID
 
@@ -587,7 +649,7 @@ Public Class Gym_Utils
     End Function
 
     Public Function ValidaToken(tmpIdUsuario As Int16, tmpToken As Int16) As Boolean
-        Dim connString As String = ConfigurationManager.ConnectionStrings("MultiGymWeb").ToString
+        Dim connString As String = ConfigurationManager.ConnectionStrings("MultigymConnString").ToString
         Dim queryString As String
         Dim TokenDB As Int16
         queryString = "SELECT Token from MG_Persona WHERE Id = " & tmpIdUsuario
@@ -610,5 +672,6 @@ Public Class Gym_Utils
         End If
 
     End Function
+
 
 End Class

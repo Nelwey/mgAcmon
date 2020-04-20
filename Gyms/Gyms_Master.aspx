@@ -982,40 +982,43 @@
             </div>
 
         </div>
+
         <div class="col-12 mb-5 border-bottom">
             <div class="row p-2" id="Disc_Serv_Div" runat="server">
-                <div class="col py-3">
+                <div class="col">
                     <h2 class="bg-azul text-white rounded p-2">Disciplinas</h2>
-                    <asp:ListBox ID="lstGymDisc" runat="server" Width="80%" DataSourceID="SQL_GymDisc"
+                    <asp:ListBox cssClass="w-100" ID="lstGymDisc" runat="server" Width="80%" DataSourceID="SQL_GymDisc"
                         DataTextField="Disciplina" DataValueField="Id" Height="200px"
                         class="form-control form-control-sm">
                     </asp:ListBox>
 
-                    <div style="height:auto;">
-                        <asp:CheckBoxList ID="chkboxDisciplinas" runat="server" RepeatColumns="3" Width="80%"
-                            DataSourceID="SQL_Disciplinas" DataTextField="Nombre" DataValueField="Id">
-                        </asp:CheckBoxList>
-                    </div>
+                    <asp:CheckBoxList class="w-100" ID="chkboxDisciplinas" runat="server" RepeatColumns="3" Width="80%"
+                        DataSourceID="SQL_Disciplinas" DataTextField="Nombre" DataValueField="Id">
+                    </asp:CheckBoxList>
+
                     <asp:Button ID="btnGrabaDisc" runat="server" Text="Grabar Disciplinas"
                         class="btn btn-dark btn-sm" />
                 </div>
-                <div class="col py-3">
+                <div class="col">
                     <h2 class="bg-azul text-white rounded p-2">Servicios</h2>
-                    <asp:ListBox ID="lstGymServ" runat="server" Width="80%" DataSourceID="SQL_GymServ"
+
+                    <asp:ListBox cssClass="w-100" ID="lstGymServ" runat="server" Width="80%" DataSourceID="SQL_GymServ"
                         DataTextField="Servicio" DataValueField="Id" Height="200px"
                         class="form-control form-control-sm">
                     </asp:ListBox>
-                    <div style="height:auto;">
-                        <asp:CheckBoxList ID="chkboxServicios" runat="server" RepeatColumns="3" Width="80%"
-                            DataSourceID="SQL_Servicios" DataTextField="Nombre" DataValueField="Id">
-                        </asp:CheckBoxList>
-                    </div>
+
+                    <asp:CheckBoxList class="w-100" ID="chkboxServicios" runat="server" RepeatColumns="3" Width="80%"
+                        DataSourceID="SQL_Servicios" DataTextField="Nombre" DataValueField="Id">
+                    </asp:CheckBoxList>
+
                     <asp:Button ID="btnGrabaServ" runat="server" Text="Grabar Servicios" class="btn btn-dark btn-sm" />
                 </div>
             </div>
         </div>
+
+
         <div class="col-12">
-            <div class="row" id="Contactos_Div" runat="Server">
+            <div class="row p-2" id="Contactos_Div" runat="Server">
                 <h2 class="bg-azul text-white rounded p-2">Contactos</h2>
                 <div class="col-12">
 
@@ -1324,10 +1327,6 @@
             readURL(this, '#contImagen3');
         });
     </script>
-
-
-
-
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MultigymConnString %>"
         DeleteCommand="DELETE FROM [MG_Gym] WHERE [ID] = @ID"

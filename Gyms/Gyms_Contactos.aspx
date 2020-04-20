@@ -10,29 +10,6 @@
         </div>
         <div class="col-12">
 
-            <asp:GridView ID="grd_Contactos" runat="server" AllowPaging="True" AllowSorting="True"
-                AutoGenerateColumns="False" DataSourceID="SQL_Gyms" CellPadding="4" ForeColor="#333333" GridLines="None"
-                PageSize="25">
-                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                <Columns>
-                    <asp:BoundField DataField="Gimnasio" HeaderText="Gimnasio" SortExpression="Gimnasio" />
-                    <asp:BoundField DataField="Contacto" HeaderText="Contacto" SortExpression="Contacto" />
-                    <asp:BoundField DataField="celular" HeaderText="Celular" SortExpression="celular" />
-                    <asp:BoundField DataField="email" HeaderText="eMail" SortExpression="email" />
-                    <asp:BoundField DataField="cargo" HeaderText="Cargo" SortExpression="cargo" />
-                </Columns>
-                <EditRowStyle BackColor="#999999" />
-                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-            </asp:GridView>
-
             <asp:TreeView ID="TreeView1" runat="server" DataSourceID="XmlDataSource1" ExpandDepth="1" CssClass="w-100">
                 <DataBindings>
                     <asp:TreeNodeBinding DataMember="Gym" TextField="NameGym" ValueField="NameGym" />
@@ -51,11 +28,7 @@
     </div>
 
 
-
-    
-
-
-    <asp:XmlDataSource ID="XmlDataSource1" runat="server"  datafile="~/Gyms/Gym_Contactos.xml"></asp:XmlDataSource>
+    <asp:XmlDataSource ID="XmlDataSource1" runat="server" datafile="~/Gyms/Gym_Contactos.xml"></asp:XmlDataSource>
 
     <asp:SqlDataSource ID="SQL_Gyms" runat="server" ConnectionString="<%$ ConnectionStrings:MultigymConnString %>"
         SelectCommand="select b.id as IDGym, a.id_Gym as IDCon, b.nombre as Gimnasio, a.nombre as Contacto,a.celular as celular ,a.email,a.cargo

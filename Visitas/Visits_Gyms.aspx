@@ -36,11 +36,10 @@
                 class="table table-responsive-sm table-sm">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
+                    <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/Images/Right-arrow.png" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                     <asp:BoundField DataField="Celular" HeaderText="Celular" SortExpression="Celular" />
                     <asp:BoundField DataField="Creditos" HeaderText="Creditos" SortExpression="Creditos" />
-                    <asp:CommandField ShowSelectButton="True" ButtonType="Image"
-                        SelectImageUrl="~/Images/Right-arrow.png" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

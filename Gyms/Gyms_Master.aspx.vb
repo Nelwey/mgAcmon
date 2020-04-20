@@ -49,15 +49,6 @@ Public Class Gyms_Master
         FormView1.ChangeMode(FormViewMode.ReadOnly)
         FormView1.Visible = True
 
-        'Dim dv As New DataView()
-        'Dim dt As New DataTable()
-
-        'Imagenes
-        'dv = SqlDataSource1.Select(DataSourceSelectArguments.Empty)
-        'dt = dv.ToTable()
-
-        'contLogo.Src = "https://multigym.fit/images/gyms/" & dt.Rows(0).Item("ImgLogo")
-
     End Sub
 
     Protected Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click

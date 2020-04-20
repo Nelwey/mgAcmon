@@ -10,7 +10,7 @@ Public Class Gyms_Reviews
     End Sub
     Public Sub btn_Export_Click(sender As Object, e As EventArgs)
 
-        Dim dv As DataView = CType(SQL_Reviews.[Select](DataSourceSelectArguments.Empty), DataView)
+        Dim dv As DataView = CType(SQL_RevDetalle.[Select](DataSourceSelectArguments.Empty), DataView)
         Dim dt As New DataTable
         Dim Utility As New Utils
         Dim fileName As String

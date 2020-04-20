@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.Mobile.master.vb" Inherits="mgAdmin.Site_Mobile" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeFile="Site.Mobile.master.vb" Inherits="Site_Mobile" %>
 
 <%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
 
@@ -105,8 +105,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="../Visitas/Visits_Gyms.aspx">A Gimnasios</a>
-                                <a class="dropdown-item" href="#">De Personas</a>
-                                <a class="dropdown-item" href="#">Ranking de Visitas</a>
+                                <a class="dropdown-item" href="../Visitas/Visits_Pers.aspx">De Personas</a>
+                                <a class="dropdown-item" href="../Visitas/Visits_Top10.aspx">Ranking de Visitas</a>
                             </div>
                         </li>
 
