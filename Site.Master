@@ -14,7 +14,7 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+<%--    <a href="Site.Master">Site.Master</a>--%>
 </head>
 <body class="bg-light">
     <form runat="server">
@@ -69,7 +69,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="../Personas/Pers_Alfabetico.aspx">Lista Alfabética</a>
-                            <a class="dropdown-item" href="../Personas/Pers_CompraCR.aspx">Lista Créditos Comprados</a>
+                            <a class="dropdown-item" href="../Personas/Pers_HistoricoPagos.aspx">Créditos Comprados</a>
                             <a class="dropdown-item" href="../Personas/Pers_Antiguos.aspx">Antiguedad</a>
                             <a class="dropdown-item" href="#">Fecha de Nacimiento</a>
                         </div>
@@ -102,8 +102,8 @@
                             Ingresos
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Registro Pago de Cliente</a>
-                            <a class="dropdown-item" href="#">Lista de Ingreso por fechas</a>
+                            <a class="dropdown-item" href="../Ingresos/Ing_PagoRecibido.aspx">Registro Pago de Cliente</a>
+                            <a class="dropdown-item" href="../Ingresos/Ing_CompraCR.aspx">Ingresos por fechas</a>
                             <a class="dropdown-item" href="#">Pagos por Medio (dep/QR/Tarj)</a>
                         </div>
                     </li>
@@ -114,7 +114,7 @@
                             Egresos
                         </a>
                         <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Consolidado entre fechas</a>
+                            <a class="dropdown-item" href="../Egresos/Pago_Consolidado.aspx">Consolidado entre fechas</a>
                             <a class="dropdown-item" href="#">Pagos por Gym</a>
                         </div>
                     </li>

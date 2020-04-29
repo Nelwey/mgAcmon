@@ -12,10 +12,12 @@
 
             <asp:GridView ID="grd_ReviewMaster" runat="server" AllowPaging="True" AllowSorting="True"
                 AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SQL_Reviews" PageSize="15" class="table table-responsive-sm table-sm">
+
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                
                 <Columns>
                     <asp:CommandField SelectText="" ShowSelectButton="True" HeaderText="Detalle" ButtonType="Image" SelectImageUrl="~/Images/Right-arrow.png" />
-                    
+
                     <asp:BoundField DataField="Nombre" HeaderText="Gimnasio" SortExpression="Nombre">
                         <ItemStyle Wrap="False" />
                     </asp:BoundField>
@@ -81,6 +83,7 @@
                 WHERE ReviewCount > 0
                 ORDER BY ReviewAverage">
     </asp:SqlDataSource>
+
     <asp:SqlDataSource ID="SQL_RevDetalle" runat="server" ConnectionString="<%$ ConnectionStrings:MultigymConnString %>"
         SelectCommand="SELECT a.Id, CONCAT(b.Nombre,' ',b.Apellido) as Persona, a.FecReview, a.Calificacion, a.Review 
             FROM mg_reviews a
@@ -92,4 +95,5 @@
         </SelectParameters>
 
     </asp:SqlDataSource>
+
 </asp:Content>

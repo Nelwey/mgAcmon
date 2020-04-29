@@ -21,6 +21,8 @@ Partial Public Class Visits_Gyms
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_Export As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btn_Buscar As Global.System.Web.UI.WebControls.Button
+
 
     '''<summary>
     '''Control FecInicial.

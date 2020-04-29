@@ -19,18 +19,18 @@
                     <asp:TextBox placeholder="FecFinal" class="form-control form-control-sm" type="Date" runat="server"
                         id="FecFinal" ClientIDMode="Static" />
                 </div>
-                <div class="col-12 col-sm-4 align-self-end mt-2">
-                    <asp:Button ID="btn_Export" runat="server" Text="Exportar Datos" OnClick="btn_Export_Click"
+ 
+                <div class="col-12 col-md-4 align-self-end mt-2">
+                    <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" OnClick="btn_Buscar_Click"
                         class="btn btn-dark btn-sm" />
 
+                    <asp:Button ID="btn_Export" runat="server" Text="Exportar Datos" OnClick="btn_Export_Click"
+                        class="btn btn-dark btn-sm" />
                 </div>
             </div>
-
         </div>
 
-
         <div class="col-12 col-lg-7 mx-auto">
-
             <asp:GridView ID="grd_Gyms" runat="server" AllowPaging="True" AllowSorting="True"
                 AutoGenerateColumns="False" DataSourceID="SQL_GymMaster" DataKeyNames="ID"
                 class="table table-responsive-sm table-sm">
@@ -38,8 +38,8 @@
                 <Columns>
                     <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/Images/Right-arrow.png" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                    <asp:BoundField DataField="Celular" HeaderText="Celular" SortExpression="Celular" />
-                    <asp:BoundField DataField="Creditos" HeaderText="Creditos" SortExpression="Creditos" />
+                    <asp:BoundField DataField="Visitas" HeaderText="Visitas" SortExpression="Visitas" />
+                    <asp:BoundField DataField="Cred_Ganado" HeaderText="Cred. Ganado" SortExpression="Cred_Ganado" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -52,7 +52,6 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-
         </div>
 
         <div class="col-12">
@@ -63,8 +62,8 @@
                 <Columns>
                     <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True"
                         SortExpression="ID" />
+                    <asp:BoundField DataField="apellido" HeaderText="Apellido" SortExpression="apellido" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                    <asp:BoundField DataField="apellido" HeaderText="apellido" SortExpression="apellido" />
                     <asp:BoundField DataField="Gimnasio" HeaderText="Gimnasio" SortExpression="Gimnasio" />
                     <asp:BoundField DataField="Fecha" DataFormatString="{0:dd/MM/yyyy hh:mm}" HeaderText="Fecha"
                         ReadOnly="True" SortExpression="Fecha" />
@@ -81,22 +80,19 @@
                 <SortedDescendingCellStyle BackColor="#FFFDF8" />
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
-
         </div>
-
     </div>
 
-
-
-
-
-
-
-
     <asp:SqlDataSource ID="SQL_GymMaster" runat="server" ConnectionString="<%$ ConnectionStrings:MultigymConnString %>"
-        SelectCommand="SELECT [Id], [Nombre], [Creditos], [Celular] FROM [MG_Gym] WHERE ([Activo] = @Activo) ORDER BY [Nombre]">
+        SelectCommand="SELECT c.id, c.nombre, count(*) as Visitas,  sum(a.credusado) as Cred_Ganado
+                from MG_Visitas a
+                inner join mg_gym c on c.id = a.id_gym 
+                WHERE a.FecVisita BETWEEN @FecIni AND @FecFin
+                GROUP BY c.id, c.nombre
+                ORDER BY [Nombre]">
         <SelectParameters>
-            <asp:Parameter DefaultValue="True" Name="Activo" Type="Boolean" />
+            <asp:Parameter Name="FecIni" Type="String" />
+            <asp:Parameter Name="FecFin" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
 

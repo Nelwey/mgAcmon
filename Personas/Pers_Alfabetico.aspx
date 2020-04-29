@@ -9,14 +9,12 @@
         <div class="col-12 py-3 py-0">
 
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-8 mb-3 mb-md-0">
+                <div class="col-12 col-sm-5 col-md-7 col-lg-8 col-xl-9 mb-3 mb-md-0">
                     <asp:TextBox ID="txtFiltroApellido" runat="server" class="form-control form-control-sm"></asp:TextBox>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <div class="col">
                     <asp:Button ID="btn_Filtar" runat="server" Text="Filtrar por Apellido" OnClick="btn_Filtar_Click"
                     class="btn btn-sm btn-dark" />
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                     <asp:Button ID="btn_Export" runat="server" Text="Exportar Datos" OnClick="btn_Export_Click"
                     class="btn btn-sm btn-dark"/>
                 </div>
@@ -55,9 +53,6 @@
         </div>
 
     </div>
-
-
-
 
     <asp:SqlDataSource ID="SQL_PersAlfa" runat="server" ConnectionString="<%$ ConnectionStrings:MultigymConnString %>"
         SelectCommand="select a.Apellido, a.Nombre,a.Email, a.Celular, a.FecIngreso, b.Nombre, a.CredDisponible, 

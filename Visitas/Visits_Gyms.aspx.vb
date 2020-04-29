@@ -6,7 +6,10 @@ Public Class Visits_Gyms
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        If Not Page.IsPostBack Then
+            FecInicial.Text = Now.AddDays(-7).ToString("MM/dd/yyyy")
+            FecFinal.Text = Now.ToString("MM/dd/yyyy")
+        End If
     End Sub
 
     Public Sub btn_Export_Click(sender As Object, e As EventArgs)
@@ -27,12 +30,20 @@ Public Class Visits_Gyms
 
     End Sub
 
-    Private Sub grd_Gyms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles grd_Gyms.SelectedIndexChanged
+    Public Sub grd_Gyms_SelectedIndexChanged(sender As Object, e As EventArgs) Handles grd_Gyms.SelectedIndexChanged
         SQL_Visitas.SelectParameters("FecIni").DefaultValue = FecInicial.Text
         SQL_Visitas.SelectParameters("FecFin").DefaultValue = FecFinal.Text
         SQL_Visitas.SelectParameters("Id_Gym").DefaultValue = grd_Gyms.SelectedValue
 
         grd_Visitas.DataBind()
+
+    End Sub
+
+    Public Sub btn_Buscar_Click(sender As Object, e As EventArgs) Handles btn_Buscar.Click
+        SQL_GymMaster.SelectParameters("FecIni").DefaultValue = FecInicial.Text
+        SQL_GymMaster.SelectParameters("FecFin").DefaultValue = FecFinal.Text
+
+        grd_Gyms.DataBind()
 
     End Sub
 End Class

@@ -1,15 +1,12 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeFile="Gyms_Master.aspx.vb" Inherits="Gyms_Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
-
-
     <div class="row mt-3">
         <div class="col-12 text-center">
             <h2>Maestro de Gimnasios</h2>
         </div>
-        <div class="col-12 py-3 py-0">
+        <div class="col-12 py-2">
             <div class="row ">
-                <div class="col-12 col-sm-6 col-md-8 col-lg-4 mb-3 mb-md-0 ">
+                <div class="col-12 col-sm-6 col-md-8 col-lg-4">
                     <asp:TextBox ID="txtBuscar" runat="server" class="form-control form-control-sm"></asp:TextBox>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-8">
@@ -40,164 +37,265 @@
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
         </div>
-        <div class="col-12 mb-5 border-bottom">
+        <div class="col-12 mb-2" style="border:groove ">
 
-            <asp:FormView ID="FormView1" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource1" class="w-100">
+            <asp:FormView ID="FormView1" runat="server" DataKeyNames="ID" DataSourceID="SqlDataSource1" class="">
 
                 <%--view--%>
                 <ItemTemplate>
                     <div class="row p-3 justify-content-between" id="contenedorGymsView">
-                        <!-- script para no tener que repetir todo ese chorizo, solo funca para itemTemplate -->
-                        <script>
-                            let gymS = [{
-                                    nameInfo: 'ID',
-                                    gymId: 'IDLabel',
-                                    gymSource: '<%#Eval("ID")%>'
-                                },
-                                {
-                                    nameInfo: 'ID Ciudad',
-                                    gymId: 'Id_CiudadLabel',
-                                    gymSource: '<%#Eval("Id_Ciudad")%>'
-                                },
-                                {
-                                    nameInfo: 'Nombre',
-                                    gymId: 'NombreLabel',
-                                    gymSource: '<%#Eval("Nombre")%>'
-                                },
-                                {
-                                    nameInfo: 'FecActivacion',
-                                    gymId: 'FecActivacionLabel',
-                                    gymSource: '<%#Eval("FecActivacion")%>'
-                                },
-                                {
-                                    nameInfo: 'Celular',
-                                    gymId: 'CelularLabel',
-                                    gymSource: '<%#Eval("Celular")%>'
-                                },
-                                {
-                                    nameInfo: 'ImgLogo',
-                                    gymId: 'ImgLogoLabel',
-                                    gymSource: '<%#Eval("ImgLogo")%>'
-                                },
-                                {
-                                    nameInfo: 'Telefono',
-                                    gymId: 'TelefonoLabel',
-                                    gymSource: '<%#Eval("Telefono")%>'
-                                },
-                                {
-                                    nameInfo: 'Img1',
-                                    gymId: 'Img1Label',
-                                    gymSource: '<%#Eval("Img1")%>'
-                                },
-                                {
-                                    nameInfo: 'Direccion',
-                                    gymId: 'DireccionLabel',
-                                    gymSource: '<%#Eval("Direccion")%>'
-                                },
-                                {
-                                    nameInfo: 'Img2',
-                                    gymId: 'Img2Label',
-                                    gymSource: '<%#Eval("Img2")%>'
-                                },
-                                {
-                                    nameInfo: 'Passw',
-                                    gymId: 'PasswLabel',
-                                    gymSource: '<%#Eval("Passw")%>'
-                                },
-                                {
-                                    nameInfo: 'Img3',
-                                    gymId: 'Img3Label',
-                                    gymSource: '<%#Eval("Img3")%>'
-                                },
-                                {
-                                    nameInfo: 'Email',
-                                    gymId: 'EmailLabel',
-                                    gymSource: '<%#Eval("Email")%>'
-                                },
-                                {
-                                    nameInfo: 'Lat',
-                                    gymId: 'LatLabel',
-                                    gymSource: '<%#Eval("Lat")%>'
-                                },
-                                {
-                                    nameInfo: 'Web',
-                                    gymId: 'WebLabel',
-                                    gymSource: '<%#Eval("Web")%>'
-                                },
-                                {
-                                    nameInfo: 'Lon',
-                                    gymId: 'LonLabel',
-                                    gymSource: '<%#Eval("Lon")%>'
-                                },
-                                {
-                                    nameInfo: 'Facebook',
-                                    gymId: 'FacebookLabel',
-                                    gymSource: '<%#Eval("Facebook")%>'
-                                },
-                                {
-                                    nameInfo: 'ReviewCount',
-                                    gymId: 'ReviewCountLabel',
-                                    gymSource: '<%#Eval("ReviewCount")%>'
-                                },
-                                {
-                                    nameInfo: 'Instagram',
-                                    gymId: 'InstagramLabel',
-                                    gymSource: '<%#Eval("Instagram")%>'
-                                },
-                                {
-                                    nameInfo: 'ReviewAverage',
-                                    gymId: 'ReviewAverageLabel',
-                                    gymSource: '<%#Eval("ReviewAverage")%>'
-                                },
-                                {
-                                    nameInfo: 'Horarios LV',
-                                    gymId: 'HorarioLV',
-                                    gymSource: '<%#Eval("HorarioLV")%>'
-                                },
-                                {
-                                    nameInfo: 'Creditos',
-                                    gymId: 'CreditosLabel',
-                                    gymSource: '<%#Eval("Creditos")%>'
-                                },
-                                {
-                                    nameInfo: 'HorarioS',
-                                    gymId: 'HorarioSLabel',
-                                    gymSource: '<%#Eval("HorarioS")%>'
-                                },
-                                {
-                                    nameInfo: 'HorarioDF',
-                                    gymId: 'HorarioDFLabel',
-                                    gymSource: '<%#Eval("HorarioDF")%>'
-                                },
-                                {
-                                    nameInfo: 'Referencias',
-                                    gymId: 'ReferenciasLabel',
-                                    gymSource: '<%#Eval("Referencias")%>'
-                                }
-                            ];
-
-                            gymS.forEach(element => {
-
-
-                                $('#contenedorGymsView').append(`
-            
-                                <div class="col-12  col-md-5 col mb-2">
-                                    <div class="row">
-                                        <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
-                                            <small>${element.nameInfo}: </small>
-                                        </div>
-                                        <div class="col border bg-white">
-                                            <small id="${element.gymId}"> ${element.gymSource}</small>
-                                        </div>
-                                    </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>ID</small>
                                 </div>
-                            `);
+                                <div class="col border bg-white">
+                                    <small id="IDLabel"><%#Eval("ID")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>ID Ciudad</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="Id_CiudadLabel"><%#Eval("Id_Ciudad")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Nombre</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="NombreLabel"><%#Eval("Nombre")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>FecActivacion</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="FecActivacionLabel"><%#Eval("FecActivacion")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Celular</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="CelularLabel"><%#Eval("Celular")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>ImgLogo</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="ImgLogoLabel"><%#Eval("ImgLogo")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Telefono</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="TelefonoLabel"><%#Eval("Telefono")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Img1</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="Img1Label"><%#Eval("Img1")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Direccion</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="DireccionLabel"><%#Eval("Direccion")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Img2</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="Img2Label"><%#Eval("Img2")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Passw</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="PasswLabel"><%#Eval("Passw")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Img3</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="Img3Label"><%#Eval("Img3")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Email</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="EmailLabel"><%#Eval("Email")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Lat</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="LatLabel"><%#Eval("Lat")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Web</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="WebLabel"><%#Eval("Web")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Lon</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="LonLabel"><%#Eval("Lon")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Facebook</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="FacebookLabel"><%#Eval("Facebook")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>ReviewCount</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="ReviewCountLabel"><%#Eval("ReviewCount")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Instagram</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="InstagramLabel"><%#Eval("Instagram")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>ReviewAverage</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="ReviewAverageLabel"><%#Eval("ReviewAverage")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Horarios LV</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="HorariosLV"><%#Eval("HorarioLV")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Creditos</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="CreditosLabel"><%#Eval("Creditos")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>HorarioS</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="HorarioSLabel"><%#Eval("HorarioS")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>HorarioDF</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="HorarioDFLabel"><%#Eval("HorarioDF")%></small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12  col-md-5 col mb-2">
+                            <div class="row">
+                                <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
+                                    <small>Referencias</small>
+                                </div>
+                                <div class="col border bg-white">
+                                    <small id="ReferenciasLabel"><%#Eval("Referencias")%></small>
+                                </div>
+                            </div>
+                        </div>
 
-
-                            });
-                        </script>
-
-                        <div class="col-12  col-md-5 mb-2">
+                        <div class="col-12  col-md-5">
                             <div class="row">
                                 <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
                                     <small>Activo:</small>
@@ -209,8 +307,10 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
 
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12">
                             <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit"
                                 Text="Editar" class="btn btn-dark btn-sm" />
                             &nbsp;
@@ -219,9 +319,29 @@
                             &nbsp;
                             <asp:LinkButton ID="NewButton" runat="server" CausesValidation="False" CommandName="New"
                                 Text="Nuevo" class="btn btn-dark btn-sm" />
-
                         </div>
-
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-3 mb-2">
+                            <h5 class="bg-azul text-white p-2 rounded"><%#Eval("ImgLogo") %></h5>
+                            <img class="imgSize" src="<%# Eval("ImgLogo", "https://multigym.fit/Images/Gyms/{0}") %>"
+                                onerror="this.onerror=null;this.src='images/Gyms/MG Imagotipo.jpg';">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 mb-2">
+                            <h5 class="bg-azul text-white p-2 rounded"><%#Eval("Img1") %></h5>
+                            <img class="imgSize" src="<%#Eval("Img1", "https://multigym.fit/Images/Gyms/{0}")%>"
+                                onerror="this.onerror=null;this.src='images/Gyms/MG Imagotipo.jpg';">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 mb-2">
+                            <h5 class="bg-azul text-white p-2 rounded"><%#Eval("Img2") %></h5>
+                            <img class="imgSize" src="<%#Eval("Img2", "https://multigym.fit/Images/Gyms/{0}")%>"
+                                onerror="this.onerror=null;this.src='images/Gyms/MG Imagotipo.jpg';">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 mb-2">
+                            <h5 class="bg-azul text-white p-2 rounded"><%#Eval("Img3") %></h5>
+                            <img class="imgSize" src="<%#Eval("Img3", "https://multigym.fit/Images/Gyms/{0}")%>"
+                                onerror="this.onerror=null;this.src='images/Gyms/MG Imagotipo.jpg';">
+                        </div>
                     </div>
                 </ItemTemplate>
 
@@ -811,7 +931,6 @@
                             </div>
                         </div>
 
-
                         <div class="col-12 col-md-5 mb-2">
                             <div class="row">
                                 <div class="col-3 col-sm-4 col-xl-4 bg-azul text-white">
@@ -918,65 +1037,138 @@
                                 CommandName="Cancel" Text="Cancelar" Cssclass="btn btn-danger btn-sm mr-2" />
                         </div>
 
+
                     </div>
                 </InsertItemTemplate>
 
             </asp:FormView>
 
         </div>
-        <div class="col-12 mb-5 border-bottom">
+        <div class="col-12 mb-5 mt-10">
 
-            <div class="row p-2" id="ImagenesDiv" runat="server">
+            <div class="row" id="ImagenesDiv" runat="server">
+                <div class="col-12">
+                    <h2 class="bg-azul text-white rounded p-2">Cargar Nuevas Imagenes</h2>
+                </div>
                 <!-- Carga Imagenes  -->
-                <div class="col-12 col-sm-6 col-lg-3  pb-3 ">
-                    <h3 class="bg-azul text-white p-2 rounded">Logo</h3>
-
-                    <div class="custom-file mb-3">
-                        <asp:FileUpload ID="logo" runat="server" />
-
-                    </div>
-
-                    <div>
-                        <img id="contLogo" src="http://placehold.it/180" class="imgSize" alt="" runat="server" />
-                    </div>
-
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3  ">
-                    <h3 class="bg-azul text-white p-2 rounded">Imagen 1</h3>
-
-                    <div class="custom-file mb-3">
-                        <asp:FileUpload ID="imagen1" runat="server" />
-                    </div>
-
-                    <div>
-                        <img id="contImagen1" src="http://placehold.it/180" class="imgSize" alt="" />
-                    </div>
-
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3  ">
-                    <h3 class="bg-azul text-white p-2 rounded">Imagen 2</h3>
-
-                    <div class="custom-file mb-3">
-                        <asp:FileUpload ID="imagen2" runat="server" />
-                    </div>
-                    <div>
-                        <img id="contImagen2" src="http://placehold.it/180" class="imgSize" alt="" />
-                    </div>
-
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3  ">
-                    <h3 class="bg-azul text-white p-2 rounded">Imagen 3</h3>
-                    <div class="custom-file mb-3">
-                        <asp:FileUpload ID="imagen3" runat="server" />
-                    </div>
-                    <div>
-                        <img id="contImagen3" src="http://placehold.it/180" class="imgSize" />
+                <div class="col-12 col-md-6 col-lg-3 mb-2">
+                    <div class="row">
+                        <div class="col-12 custom-file mb-3">
+                            <asp:FileUpload ID="logo" runat="server" />
+                        </div>
+                        <div class="col-12">
+                            <img id="contLogo" src="http://placehold.it/250" class="imgSize" />
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 mt-2">
+
+                <div class="col-12 col-md-6 col-lg-3 mb-2">
+
+                    <div class="row">
+                        <div class="col-12 custom-file mb-3">
+                            <asp:FileUpload ID="imagen1" runat="server" />
+                        </div>
+                        <div class="col-12">
+                            <img id="contImagen1" src="http://placehold.it/250" class="imgSize" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 mb-2">
+                    <div class="row">
+                        <div class="col-12 custom-file mb-3">
+                            <asp:FileUpload ID="imagen2" runat="server" />
+                        </div>
+                        <div class="col-12">
+                            <img id="contImagen2" src="http://placehold.it/250" class="imgSize" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3 mb-2">
+                    <div class="row">
+                        <div class="col-12 custom-file mb-3">
+                            <asp:FileUpload ID="imagen3" runat="server" />
+                        </div>
+                        <div class="col-12">
+                            <img id="contImagen3" src="http://placehold.it/250" class="imgSize" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mb-3">
+
                     <asp:Button ID="btnCargaImagenes" runat="server" Text="Carga Imagenes"
                         class="btn btn-dark btn-sm" />
                     <asp:Label ID="lblCargaImagenes" runat="server" Text=""></asp:Label>
+
+                </div>
+
+                <div class="col-12">
+
+                    <div class="row" id="Contactos_Div" runat="Server">
+
+                        <div class="col-12">
+                            <h2 class="bg-azul text-white rounded p-2">Contactos</h2>
+                            <div class="row">
+                                <div class="col-12 col-sm-auto">
+                                    <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
+                                    <asp:TextBox ID="txtContactName" runat="server"
+                                        class="form-control form-control-sm">
+                                    </asp:TextBox>
+                                </div>
+                                <div class="col-12 col-sm-auto">
+                                    <asp:Label ID="Label2" runat="server" Text="Celular"></asp:Label>
+                                    <asp:TextBox ID="txtContactCel" runat="server" class="form-control form-control-sm">
+                                    </asp:TextBox>
+                                </div>
+                                <div class="col-12 col-sm-auto">
+                                    <asp:Label ID="Label3" runat="server" Text="Email"></asp:Label>
+                                    <asp:TextBox ID="txtContactMail" runat="server"
+                                        class="form-control form-control-sm">
+                                    </asp:TextBox>
+                                </div>
+                                <div class="col col-12 col-sm-auto">
+                                    <asp:Label ID="Label4" runat="server" Text="Cargo"></asp:Label>
+                                    <asp:TextBox ID="txtContactCargo" runat="server"
+                                        class="form-control form-control-sm">
+                                    </asp:TextBox>
+                                </div>
+                            </div>
+                            <asp:Button ID="NewContact" runat="server" Text="Insertar Contacto"
+                                class="btn btn-dark btn-sm my-3" />
+                        </div>
+
+                        <div class="col-12">
+                            <asp:GridView ID="grdContactos" runat="server" AllowPaging="True" AllowSorting="True"
+                                AutoGenerateColumns="False" DataSourceID="SQL_Contactos" DataKeyNames="Id"
+                                class="table table-responsive-lg table-sm">
+                                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                <Columns>
+                                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+                                    <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True"
+                                        SortExpression="Id" />
+                                    <asp:BoundField DataField="Id_Gym" HeaderText="Id_Gym" SortExpression="Id_Gym" />
+                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                                    <asp:BoundField DataField="Celular" HeaderText="Celular" SortExpression="Celular" />
+                                    <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                                    <asp:BoundField DataField="Cargo" HeaderText="Cargo" SortExpression="Cargo" />
+                                </Columns>
+                                <EditRowStyle BackColor="#999999" />
+                                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                <PagerStyle BackColor="#284775" ForeColor="White" />
+                                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                            </asp:GridView>
+
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -984,7 +1176,7 @@
         </div>
 
         <div class="col-12 mb-5 border-bottom">
-            <div class="row p-2" id="Disc_Serv_Div" runat="server">
+            <div class="row" id="Disc_Serv_Div" runat="server">
                 <div class="col">
                     <h2 class="bg-azul text-white rounded p-2">Disciplinas</h2>
                     <asp:ListBox cssClass="w-100" ID="lstGymDisc" runat="server" Width="80%" DataSourceID="SQL_GymDisc"
@@ -1016,73 +1208,13 @@
             </div>
         </div>
 
-
-        <div class="col-12">
-            <div class="row p-2" id="Contactos_Div" runat="Server">
-                <h2 class="bg-azul text-white rounded p-2">Contactos</h2>
-                <div class="col-12">
-
-                    <div class="row">
-                        <div class="col-12 col-sm-auto">
-                            <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
-                            <asp:TextBox ID="txtContactName" runat="server" class="form-control form-control-sm">
-                            </asp:TextBox>
-                        </div>
-                        <div class="col-12 col-sm-auto">
-                            <asp:Label ID="Label2" runat="server" Text="Celular"></asp:Label>
-                            <asp:TextBox ID="txtContactCel" runat="server" class="form-control form-control-sm">
-                            </asp:TextBox>
-                        </div>
-                        <div class="col-12 col-sm-auto">
-                            <asp:Label ID="Label3" runat="server" Text="Email"></asp:Label>
-                            <asp:TextBox ID="txtContactMail" runat="server" class="form-control form-control-sm">
-                            </asp:TextBox>
-                        </div>
-                        <div class="col col-12 col-sm-auto">
-                            <asp:Label ID="Label4" runat="server" Text="Cargo"></asp:Label>
-                            <asp:TextBox ID="txtContactCargo" runat="server" class="form-control form-control-sm">
-                            </asp:TextBox>
-                        </div>
-                    </div>
-                    <asp:Button ID="NewContact" runat="server" Text="Insertar Contacto"
-                        class="btn btn-dark btn-sm my-3" />
-                </div>
-
-                <div class="col-12">
-                    <asp:GridView ID="grdContactos" runat="server" AllowPaging="True" AllowSorting="True"
-                        AutoGenerateColumns="False" DataSourceID="SQL_Contactos" DataKeyNames="Id"
-                        class="table table-responsive-lg table-sm">
-                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
-                        <Columns>
-                            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True"
-                                SortExpression="Id" />
-                            <asp:BoundField DataField="Id_Gym" HeaderText="Id_Gym" SortExpression="Id_Gym" />
-                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                            <asp:BoundField DataField="Celular" HeaderText="Celular" SortExpression="Celular" />
-                            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                            <asp:BoundField DataField="Cargo" HeaderText="Cargo" SortExpression="Cargo" />
-                        </Columns>
-                        <EditRowStyle BackColor="#999999" />
-                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#284775" ForeColor="White" />
-                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                        <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                        <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                        <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
-                    </asp:GridView>
-
-                </div>
-
-
-            </div>
-        </div>
         <div class="col-12">
             <!--  Bancos  -->
             <div id="Banco_div" runat="server">
+                <div class="col-12">
+                    <h2 class="bg-azul text-white rounded p-2">Datos de Banco</h2>
+                </div>
+
                 <asp:FormView ID="Frm_Banco" runat="server" DataKeyNames="ID" DataSourceID="SQL_Gym_Banco"
                     class="w-100">
                     <ItemTemplate>
@@ -1260,15 +1392,6 @@
                         </div>
 
 
-
-
-
-
-
-
-
-
-
                     </EditItemTemplate>
 
                     <InsertItemTemplate>
@@ -1302,31 +1425,36 @@
 
 
     <script>
-        function readURL(input, contenedor) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+        $(function () {
 
-                reader.onload = function (e) {
-                    $(contenedor).attr('src', e.target.result);
-                };
+            $("#MainContent_logo").change(function () {
+                readURL(this);
+                readURL(this, '#contLogo');
+            });
+            $("#MainContent_imagen1").change(function () {
+                readURL(this, '#contImagen1');
+            });
+            $("#MainContent_imagen2").change(function () {
+                readURL(this, '#contImagen2');
+            });
+            $("#MainContent_imagen3").change(function () {
+                readURL(this, '#contImagen3');
+            });
 
-                reader.readAsDataURL(input.files[0]);
+            function readURL(input, contenedor) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        // Asignamos el atributo src a la tag de imagen
+                        $(contenedor).attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
             }
-        }
-
-        $("#logo").change(function () {
-            readURL(this, '#contLogo');
-        });
-        $("#imagen1").change(function () {
-            readURL(this, '#contImagen1');
-        });
-        $("#imagen2").change(function () {
-            readURL(this, '#contImagen2');
-        });
-        $("#imagen3").change(function () {
-            readURL(this, '#contImagen3');
         });
     </script>
+
+
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MultigymConnString %>"
         DeleteCommand="DELETE FROM [MG_Gym] WHERE [ID] = @ID"
@@ -1481,8 +1609,5 @@
             <asp:Parameter Name="ID" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-
-
-
 
 </asp:Content>
